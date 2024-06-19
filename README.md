@@ -180,7 +180,8 @@ char teclado_matricial [FILASTECLADO][COLUMNASTECLADO] = {
 
 };
 ```
-```#char teclado_matricial [FILASTECLADO][COLUMNASTECLADO]```
+
+```#char teclado_matricial [FILASTECLADO][COLUMNASTECLADO]``` Nos muestra como estan definidos las teclas del teclado matricial
 
 ```
 int tateti[FILASLEDS][COLUMNASLEDS] = {
@@ -189,3 +190,117 @@ int tateti[FILASLEDS][COLUMNASLEDS] = {
   {17, 18, 19}
 };
 ```
+```#int tateti[FILASLEDS][COLUMNASLEDS]``` Nos muestra como estan definidas las filas y columnas de los leds
+
+```
+byte pines_filas[FILASTECLADO] = {F1, F2, F3, F4}; 
+```
+
+```#byte pines_filas[FILASTECLADO]``` Define la cantidad de filas que tiene el teclado matricial
+
+```
+byte pines_columnas[COLUMNASTECLADO] = {C1, C2, C3}; 
+```
+
+```#byte pines_columnas[COLUMNASTECLADO]```Define la cantidad de columnas que tiene el teclado matricial
+
+```
+Keypad keypad = Keypad( makeKeymap(teclado_matricial), pines_filas, pines_columnas, FILASTECLADO, COLUMNASTECLADO);
+```
+
+```#Keypad keypad = Keypad( makeKeymap(teclado_matricial), pines_filas, pines_columnas, FILASTECLADO, COLUMNASTECLADO);``` Definicion del teclado con sus debidos pines y columnas
+
+```
+int jugadorActual = 0;
+```
+```#int jugadorActual = 0;``` Define la variable "jugadorActual", con el valor (0)
+```
+char teclaPresionada,destinoFicha;
+```
+
+```#char teclaPresionada,destinoFicha;``` Define en un caracter las 2 variables "teclaPresionada" y "destinoFicha"
+
+```
+bool alguienGano = false;
+```
+
+```#bool alguienGano = false;```esta definiendo una variable llamada "alguienGano" de tipo booleano, la cual nos idica que es falsa(false)
+
+```
+bool tiempoAgotado = false;
+```
+
+```#bool tiempoAgotado = false;``` esta definiendo una variable llamada "tiempoAgotado" de tipo booleano, la cual nos idica que es falsa(false)
+
+```
+bool fichasPuestas = false;
+```
+
+```#bool fichasPuestas = false;``` esta definiendo una variable llamada "fichasPuestas" de tipo booleano, la cual nos idica que es falsa(false)
+
+
+
+```
+bool fichaSeleccionada = false;
+```
+
+```#bool fichaSeleccionada = false;``` esta definiendo una variable llamada "fichaSeleccionada" de tipo booleano, la cual nos idica que es falsa(false)
+
+
+```
+int  ganador = 2;
+```
+
+```#int  ganador = 2;``` esta definiendo la variable "ganador", con el valor (2)
+
+```
+int cantidadMovimientos = 0;
+```
+
+```#int cantidadMovimientos = 0;``` esta definiendo la variable "cantidadMovimientos", con el valor(0)
+
+# Void setup
+
+```
+Serial.begin(9600);
+```
+
+```#Serial.begin(9600);``` Define la velocidad que maneja el puerto serie
+
+```
+pinMode(BUZ,OUTPUT);
+```
+
+```#pinMode(BUZ,OUTPUT);``` Define el BUZ como un pin de slaida(OUTPUT)
+
+```
+pinMode(RLT,OUTPUT);
+pinMode(GLT,OUTPUT);
+pinMode(BLT,OUTPUT);
+```
+
+```#pinMode(RLT,OUTPUT);``` Define el RLT como un pin de salida(OUTPUT)
+
+```#pinMode(GLT,OUTPUT);``` Define el GLT como un pin de salida(OUTPUT)
+
+```#pinMode(BLT,OUTPUT);``` Define el BLT como un pin de salida(OUTPUT)
+
+# Void loop
+
+```
+encenderBuzzer(1,50);
+```
+
+```#encenderBuzzer(1,50);``` Aca nos muestra la funcion "encenderBuzzer" haceindo que se prenda, pero con 2 variables, en este caso son (1,50), la primera variable (1) nos indica cuantas veces debe encenderse, la segunda nos indica un intervalo de tiempo en el que el buzzer debe estar en funcionamiento, en este caso (50), este se mide en milisegundos
+
+```
+while (!alguienGano)
+
+```
+#Algoritmo principal
+```
+while (!alguienGano)
+
+
+```
+Esta funcion 
