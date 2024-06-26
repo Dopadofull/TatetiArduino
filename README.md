@@ -293,14 +293,43 @@ encenderBuzzer(1,50);
 
 ```#encenderBuzzer(1,50);``` Aca nos muestra la funcion "encenderBuzzer" haceindo que se prenda, pero con 2 variables, en este caso son (1,50), la primera variable (1) nos indica cuantas veces debe encenderse, la segunda nos indica un intervalo de tiempo en el que el buzzer debe estar en funcionamiento, en este caso (50), este se mide en milisegundos
 
+# Algoritmo principal
 ```
-while (!alguienGano)
+while (!alguienGano){
+    mostrarTurnoJugador(jugadorActual);
+    imprimirTablero();
+    teclaPresionada = escucharTeclado();
+    if (teclaPresionada == '0'){
+      Serial.println("Tiempo Agotadooooooooooooo!");
+      cantidadMovimientos--;
+    }
+```
 
 ```
-#Algoritmo principal
-```
-while (!alguienGano)
+mostrarTurnoJugador(jugadorActual);
 
+``` 
+```mostrarTurnoJugador(jugadorActual);``` Define una funcion llamada "mostrarTurnoJugador" con el parametro ```jugadorActual```. La funcion ```int jugadorActual = 0``` si es igual a 0 es turno del jugador 1.
+
+``` 
+imprimirTablero();
+
+``` 
+```imprimirTablero();``` El codigo define una funcion 'imprimirTablero' que imprime una matriz tateti de 3x3 en el monitor serie, mostrando cada fila en una nueva linea y separando los elementos con comas.
 
 ```
-Esta funcion 
+teclaPresionada = escucharTeclado();
+```
+
+```teclaPresionada = escucharTeclado();``` define 2 funciones, 'teclPresionada' y 'escucharTeclado', lo que hace es, el valor de 'escucharTeclado' se le es asignado a 'teclaPresionada', captura la tecla presionada por el usuario y la almacena en 'teclaPresionada'
+
+```
+ if (teclaPresionada == '0'){
+      Serial.println("Tiempo Agotadooooooooooooo!");
+      cantidadMovimientos--;
+```
+
+```if (teclaPresionada == '0')``` Una condicion, nos dice que si 'TeclaPresionda' es igual a 0 nos imprime el mensaje 'Tiempo Agotadooooooooooooo!'
+
+```cantidadMovimientos--;``` Disminuye en uno el valor almacenadode esta funcion, nos indica que se a utlizado un turno.
+
