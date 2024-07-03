@@ -333,3 +333,4 @@ teclaPresionada = escucharTeclado();
 
 ```cantidadMovimientos--;``` Disminuye en uno el valor almacenadode esta funcion, nos indica que se a utlizado un turno.
 
+probando
