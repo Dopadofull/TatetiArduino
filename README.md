@@ -332,5 +332,3 @@ teclaPresionada = escucharTeclado();
 ```if (teclaPresionada == '0')``` Una condicion, nos dice que si 'TeclaPresionda' es igual a 0 nos imprime el mensaje 'Tiempo Agotadooooooooooooo!'
 
 ```cantidadMovimientos--;``` Disminuye en uno el valor almacenadode esta funcion, nos indica que se a utlizado un turno.
-
-probando
